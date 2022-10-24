@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Films index{% endblock %}
+
+{% block body %}
+    <h1>Films</h1>
+    <a href="{{ path('app_films_new') }}">Create new</a>
+
+    <div id="conteneur">
+        {% for film in films %}
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">{{ film.id }}</div>
+            <div class="card-body">
+              <h4 class="card-title">{{ film.title }}</h4>
+              <div id="img"><img src="{{ asset('assets/img/posters/' ~ film.id) }}.jpg"
+                onerror="this.src=`{{ asset('assets/img/posters/default.jpg') }}`" alt=""></div>
+              <p>{{ film.year }}</p>
+              <p>{{ film.genres }}</p>
+              <p class="card-text">{{ film.plot }}</p>
+            </div>
+            <div class="action">
+                <a href="{{ path('app_films_show', {'id': film.id}) }}"><i class="fa-solid fa-eye"></i></a>
+                <a href="{{ path('app_films_edit', {'id': film.id}) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+            </div>
+        </div>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+    </div>
+
+{% endblock %}

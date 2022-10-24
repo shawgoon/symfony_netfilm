@@ -1,0 +1,48 @@
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+#conteneur{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card{
+    width: 30%;
+    margin: 1em;
+    padding: 0.5em;
+}
+#img{
+    margin: 0 auto;
+}
+.action{
+    width: 60%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-around;
+}
+.fa-eye{
+    color: green;
+}
+.fa-pen-to-square{
+    color: orange;
+}
+#formSearch{
+    position: relative;
+}
+#resultSearch{
+    height: 0;
+    border-radius: 0.5em;
+    overflow: hidden;
+    position: absolute;
+    top: 56px;
+    transition: all .3s;
+    background-color: aquamarine;
+    z-index: 1;
+}
+#resultSearch a{
+    margin: 0.5em;
+}
